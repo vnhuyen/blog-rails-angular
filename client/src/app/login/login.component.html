@@ -1,0 +1,29 @@
+<mat-card class="w-1/2 mx-auto">
+  <form class="p-9" [formGroup]="signInForm">
+    <h2>Sign in</h2>
+    <div class="mb-2">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username" />
+        <mat-error class="mb-2" *ngIf="signInForm.controls['username'].errors"
+          >Name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="mb-2">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+        />
+        <mat-error class="mb-2">Password is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-2 row-actions">
+      <button mat-raised-button color="primary" type="submit">Sign in</button>
+    </div>
+  </form>
+</mat-card>
